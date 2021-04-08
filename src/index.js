@@ -3,7 +3,7 @@ const cors = require('cors')
 const morgan = require('morgan')
 const connection = require('./config')
 const routes = require('../routes/index')
-const port = 4242
+const port = 2142
 
 const app = express()
 
@@ -19,8 +19,11 @@ connection.connect(err => {
   }
   console.log('connected as id ' + connection.threadId)
 })
+
 app.use('/houses', routes.houses)
 app.use('/students', routes.students)
+app.use('/spells', routes.spells)
+app.use('/shs', routes.studSpell)
 app.listen(port, err => {
   if (err) {
     console.log('chicken is fried')

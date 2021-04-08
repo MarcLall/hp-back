@@ -3,7 +3,7 @@ const connection = require('../src/config')
 
 const router = express.Router()
 
-router.get(`/`, (request, res) => {
+router.get(`/`, (req, res) => {
   connection.query('SELECT * FROM houses', (err, results) => {
     if (err) {
       res.status(500).send(`Error retrieving data`)

@@ -1,3 +1,6 @@
 const houses = require('./houses')
 const students = require('./students')
-module.exports = { houses, students }
+const spells = require('./spells')
+const studSpell = require('./spells_has_student')
+
+module.exports = { houses, students, spells, studSpell }
